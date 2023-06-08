@@ -16,7 +16,7 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: docker://berdowsky/actions:0.1.4
+  image: docker://berdowsky/actions:0.1.5
   env:
     REPOSITORY_KEY: ${{ inputs.repository-key }}
     REPOSITORY_SECRET_KEY: ${{ inputs.repository-secret-key }}
