@@ -21,4 +21,5 @@ runs:
     REPOSITORY_KEY: ${{ inputs.repository-key }}
     REPOSITORY_SECRET_KEY: ${{ inputs.repository-secret-key }}
   args:
+    - yaml-to-lumadata
     - /github/workspace/${{ inputs.file-path }}
