@@ -1,0 +1,24 @@
+name: 'Lumadata actions'
+description: 'Push YAML to Lumadata'
+inputs:
+  repository-key:
+    description: 'REPOSITORY_KEY'
+    required: true
+#    default: ''
+  repository-secret-key:
+    description: 'REPOSITORY_SECRET_KEY'
+    required: true
+  file-path:
+    description: 'Yaml file path'
+    required: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: berdowsky/actions:0.1.0
+  env:
+    REPOSITORY_KEY: ${{ inputs.repository-key }}
+    REPOSITORY_SECRET_KEY: ${{ inputs.repository-secret-key }}
+  args:
+    - /github/workspace/${{ inputs.file-path }}
