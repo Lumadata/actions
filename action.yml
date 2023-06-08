@@ -1,5 +1,5 @@
 name: 'Lumadata actions'
-description: 'Push YAML to Lumadata'
+description: 'YAML to Lumadata'
 inputs:
   repository-key:
     description: 'REPOSITORY_KEY'
@@ -8,8 +8,8 @@ inputs:
   repository-secret-key:
     description: 'REPOSITORY_SECRET_KEY'
     required: true
-  file-path:
-    description: 'Yaml file path'
+  path-to-directory:
+    description: 'Path to directory of yaml files'
     required: true
 outputs:
   time: # id of output
@@ -22,4 +22,4 @@ runs:
     REPOSITORY_SECRET_KEY: ${{ inputs.repository-secret-key }}
   args:
     - yaml-to-lumadata
-    - /github/workspace/${{ inputs.file-path }}
+    - /github/workspace/${{ inputs.path-to-directory }}
