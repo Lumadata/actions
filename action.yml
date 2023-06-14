@@ -1,4 +1,4 @@
-name: 'Lumadata actions'
+name: 'Lumadata github actions'
 description: 'YAML to Lumadata'
 inputs:
   repository-key:
@@ -11,12 +11,9 @@ inputs:
   path-to-directory:
     description: 'Path to directory of yaml files'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: docker://berdowsky/actions:0.1.5
+  image: docker://lumadata/actions:0.1.0
   env:
     REPOSITORY_KEY: ${{ inputs.repository-key }}
     REPOSITORY_SECRET_KEY: ${{ inputs.repository-secret-key }}
